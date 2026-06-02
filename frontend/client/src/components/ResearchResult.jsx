@@ -7,7 +7,7 @@ export default function ResearchResult({ result }) {
   if (!result) return null;
 
   return (
-    <div className="mt-6 space-y-6">
+    <div className="mt-6 space-y-6 text-red-600 ">
       <section>
         <h2 className="font-bold text-lg">🔍 Search Results</h2>
         {Array.isArray(result.search_results) &&
@@ -42,13 +42,14 @@ export default function ResearchResult({ result }) {
                 </div>
               );
             }
+            /*
             if (item.type === "reference") {
               return (
                 <p key={i} className="text-sm text-blue-600">
-                  References: {item.reference_ids.join(", ")}
+                  References: <a href={item.reference_ids.join(", ")} target="_blank" rel="noopener noreferrer">{item.reference_ids.join(", ")}</a>
                 </p>
               );
-            }
+            }*/
             return null;
           })}
       </section>
